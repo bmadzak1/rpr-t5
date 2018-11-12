@@ -47,6 +47,6 @@
       <Button fx:id="btn3" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="Infinity" text="3" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       <Button fx:id="plusBtn" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="Infinity" prefWidth="Infinity" text="+" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.rowSpan="2" />
       <Button fx:id="equalsBtn" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="Infinity" prefWidth="Infinity" text="=" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.rowSpan="2" />
-      <Label fx:id="display" prefHeight="44.0" prefWidth="Infinity" text="0" GridPane.columnIndex="1" GridPane.columnSpan="4" />
+      <Label  value="${controller.displayValue}" fx:id="display" prefHeight="44.0" prefWidth="Infinity" text="0" GridPane.columnIndex="1" GridPane.columnSpan="4" />
    </children>
 </GridPane>

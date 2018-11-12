@@ -1,12 +1,15 @@
 package ba.unsa.etf.rpr.tutorijal05;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Controller {
 
+    private SimpleStringProperty displayValue;
     public Label display;
     Float storage = 0f;
     int operation = -1;
@@ -29,89 +32,106 @@ public class Controller {
     public Button plusBtn;
     public Button equalsBtn;
 
+    public Controller(){
+        displayValue = new SimpleStringProperty("0");
+    }
+
+    public SimpleStringProperty displayValueProperty(){
+        return displayValue;
+    }
+
+    @FXML
+    public void initialize(){
+        display.textProperty().bindBidirectional(displayValue);
+    }
+
+
+    public String getDisplayValue(){
+        return displayValue.get();
+    }
 
     public void buttonPressed(ActionEvent actionEvent) {
         if(actionEvent.getSource() == btn1){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "1");
+            displayValue.set(displayValue.get() + "1");
         }else if(actionEvent.getSource() == btn2){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "2");
+            displayValue.set(displayValue.get() + "2");
         }else if(actionEvent.getSource() == btn3){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "3");
+            displayValue.set(displayValue.get() + "3");
         }else if(actionEvent.getSource() == btn4){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "4");
+            displayValue.set(displayValue.get() + "4");
         }else if(actionEvent.getSource() == btn5){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "5");
+            displayValue.set(displayValue.get() + "5");
         }else if(actionEvent.getSource() == btn6){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "6");
+            displayValue.set(displayValue.get() + "6");
         }else if(actionEvent.getSource() == btn7){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "7");
+            displayValue.set(displayValue.get() + "7");
         }else if(actionEvent.getSource() == btn8){
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "8");
+            displayValue.set(displayValue.get() + "8");
         }else if(actionEvent.getSource() == btn9){
-            display.setText(display.getText() + "9");
+            displayValue.set(displayValue.get() + "9");
         }else if(actionEvent.getSource() == btn0) {
-            if(display.getText().length() > 0){
-                if(Float.parseFloat(display.getText()) == 0f)
-                    display.setText("");
+            if(displayValue.get().length() > 0){
+                if(Float.parseFloat(displayValue.get()) == 0f)
+                    displayValue.set("");
             }
-            display.setText(display.getText() + "0");
+            displayValue.set(displayValue.get() + "0");
         }else if(actionEvent.getSource() == plusBtn){
-            storage = Float.parseFloat(display.getText());
+            storage = Float.parseFloat(displayValue.get());
             operation = 1;
-            display.setText("");
+            displayValue.set("");
         }else if(actionEvent.getSource() == minusBtn){
-            storage = Float.parseFloat(display.getText());
+            storage = Float.parseFloat(displayValue.get());
             operation = 2;
-            display.setText("");
+            displayValue.set("");
         }else if(actionEvent.getSource() == multiplyBtn){
-            storage = Float.parseFloat(display.getText());
+            storage = Float.parseFloat(displayValue.get());
             operation = 3;
-            display.setText("");
+            displayValue.set("");
         }else if(actionEvent.getSource() == divideBtn){
-            storage = Float.parseFloat(display.getText());
+            storage = Float.parseFloat(displayValue.get());
             operation = 4;
-            display.setText("");
+            displayValue.set("");
         }else if(actionEvent.getSource() == moduleButton){
-            storage = Float.parseFloat(display.getText());
+            storage = Float.parseFloat(displayValue.get());
             operation = 6;
-            display.setText("");
+            displayValue.set("");
         }else if(actionEvent.getSource() == dotBtn){
-            if(!display.getText().contains("."))
-                display.setText(display.getText() + ".");
+            if(!displayValue.get().contains("."))
+                displayValue.set(displayValue.get() + ".");
         }else if(actionEvent.getSource() == equalsBtn){
-            Float storage2 = Float.parseFloat(display.getText());
+            Float storage2 = Float.parseFloat(displayValue.get());
             Float result = 0f;
             if(operation == 1)
                 result = storage + storage2;
@@ -123,7 +143,7 @@ public class Controller {
                 result = storage/storage2;
             else if(operation == 5)
                 result = storage%storage2;
-            display.setText(String.valueOf(result));
+            displayValue.set(String.valueOf(result));
         }
     }
 }
