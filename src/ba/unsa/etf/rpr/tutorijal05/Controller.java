@@ -108,7 +108,8 @@ public class Controller {
             operation = 6;
             display.setText("");
         }else if(actionEvent.getSource() == dotBtn){
-            display.setText(display.getText() + ".");
+            if(!display.getText().contains("."))
+                display.setText(display.getText() + ".");
         }else if(actionEvent.getSource() == equalsBtn){
             Float storage2 = Float.parseFloat(display.getText());
             Float result = 0f;
