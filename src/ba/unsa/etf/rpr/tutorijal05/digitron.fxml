@@ -30,7 +30,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
   </rowConstraints>
    <children>
-      <Button fx:id="moduleButton" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="Infinity" text="\%" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="moduleBtn" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="Infinity" text="\%" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Button fx:id="divideBtn" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="Infinity" text="/" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <Button fx:id="multiplyBtn" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="Infinity" text="x" GridPane.columnIndex="3" GridPane.rowIndex="1" />
       <Button fx:id="minusBtn" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="Infinity" text="-" GridPane.columnIndex="4" GridPane.rowIndex="1" />
